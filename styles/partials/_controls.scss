@@ -1,7 +1,7 @@
 .controls {
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 30px;
+    padding: 10px;
     color: white;
     background: tomato;
 }
@@ -9,13 +9,13 @@
 .level, .start {
     flex-basis: 150px;
     flex-shrink: 0;
-    padding: 20px;
-    margin: 20px 30px;
+    padding: 10px;
+    margin: 5px;
     border: 2px solid white;
     border-radius: 10px;
     text-align: center;
 }
 
 .start {
-    min-width: 100%;
+    // min-width: 100%;
 }

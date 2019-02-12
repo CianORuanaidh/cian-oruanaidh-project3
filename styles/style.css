@@ -191,7 +191,7 @@ img {
   -webkit-box-pack: space-evenly;
   -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
-  padding: 30px;
+  padding: 10px;
   color: white;
   background: tomato; }
 
@@ -200,14 +200,20 @@ img {
   flex-basis: 150px;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  padding: 20px;
-  margin: 20px 30px;
+  padding: 10px;
+  margin: 5px;
   border: 2px solid white;
   border-radius: 10px;
   text-align: center; }
 
-.start {
-  min-width: 100%; }
+.score-holder {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: lightcoral;
+  color: white; }
 
 .score-holder h2 {
-  text-align: center; }
+  text-align: center;
+  margin: 0;
+  padding: 20px; }
