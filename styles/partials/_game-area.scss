@@ -7,6 +7,10 @@
     padding: 10px 30px;
 }
 
+.paused {
+    cursor: not-allowed;
+}
+
 .holder {
     padding: 200px 0;
     text-transform: uppercase;
@@ -27,5 +31,9 @@
 }
 
 .wrong {
+    background: red;
+}
+
+.clicked {
     background: red;
 }

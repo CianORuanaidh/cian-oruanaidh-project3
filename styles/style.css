@@ -144,6 +144,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   color: white;
   padding: 10px 30px; }
 
+.paused {
+  cursor: not-allowed; }
+
 .holder {
   padding: 200px 0;
   text-transform: uppercase; }
@@ -163,6 +166,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   background: greenyellow; }
 
 .wrong {
+  background: red; }
+
+.clicked {
   background: red; }
 
 .flex {
