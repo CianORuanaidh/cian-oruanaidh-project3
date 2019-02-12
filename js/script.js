@@ -1,56 +1,49 @@
-
 // set up game variables
-// let score = 0;
 let initialBait = 0;
 let baitCount = 0;
 let level = 'easy'
 let gameOn = true;
 let gamesPlayed = 0;
 
+// FUNCTION FOR ON CLICK OF BAIT
 // if bait is clicked, increment score by 1
 $('body').on('click', '.bait', function () {
     if (gameOn === true ){
         $(this).removeClass('not-clicked')
         $(this).addClass("clicked");    
         baitCount --;
-        // score++;
         $('.score').html(baitCount);
     }
-    // // $(this).hide();
-    // if (gameOn === true) {
-    // }
-    // else {
-    //     console.log("GAME IS OBVVERRRR");
-    // }
 });
 
-// if non-bait is clicked, decrease score by 1
+// FUNCTION FOR ON CLICK OF BOOT
+// if non-bait is clicked, paused ability to click for 1.5 seconds
 $('body').on('click', '.boot', function () {
     if (gameOn === false) {
-        console.log("gameOn not true");
+        console.log("Game is over");
     } else {
         gameOn = false;
         $('.game-area').addClass("paused"); 
         setTimeout( function(){ 
             gameOn = true;
             $('.game-area').removeClass("paused");
-          }  , 2000 );    
+          }  , 1500 );    
     }
 });
 
-// SET UP PLAYING BOARD FUNCTION
-// declare initial function
+// declare icons as variables
 let bait1 = "worm.svg";
 let bait2 = "caterpillar.svg";
 let boot1 = "boot.svg";
 let boot2 = "boot-2.svg";
 let gameBoardHTML = '';
 
-// function to create board
+// FUNCTION TO CREATE GAME BOARD
+// takes count variable based on game difficulty 
+// & randomly creates cards based on type and icon
 function createGameBoard(count) {
     for (let i=0; i<count; i++){
         let randoNum = Math.floor(Math.random() * 100);
-        // console.log(randoNum);
         if (randoNum < 20) {
             baitCount ++ ;
             gameBoardHTML += `<div class="card bait not-clicked"><img src="assets/${bait1}" alt="worm"></div>`;
@@ -66,15 +59,14 @@ function createGameBoard(count) {
     initialBait = baitCount;
 }
 
-// function to change game difficulty setting
+// FUNCTION TO CHANGE GAME DIFFICULTY SETTING
 $('.level').on('click', function(){
     level = $(this).html().toLowerCase();
 });
 
-// function to control game length and logic
+// MAIN FUNCTION TO CONTROL GAME LENGTH AND LOGIC
 function playGame() {
-
-    // creat board based on level of difficulty
+    // create game board based on level of difficulty
     if (level === 'easy'){
         createGameBoard(32);
     } else if (level === 'medium') {
@@ -87,7 +79,7 @@ function playGame() {
     let gameLength = 10;
     let gameClock = gameLength + 4;
 
-    // start countdown from 3
+    // start mission countdown from 3
     $('.game-area .holder h2').html("READY?");  
 
     let countInterval = setInterval(timer, 800);
@@ -98,12 +90,13 @@ function playGame() {
             gameClock = gameClock -1;
 
         } else if (gameClock === (gameLength + 1)){
-            // tell player the game is starting & how many bugs they have to get
+            // tell player the mission is starting & how many bugs they have to get
             $('.game-area .holder h2').html("START!");
             $('.score').html(baitCount);
             gameClock = gameClock -1;
 
         } else if (gameClock === gameLength) {
+            // mission starts
             // populate game-area board with cards & set gam timer
             $('.game-area').html(gameBoardHTML);
             $('.timer').html(gameClock);
@@ -117,12 +110,15 @@ function playGame() {
         } else {
             // time is up, game is over
             $('.timer').html("Times UP!");
-            console.log(baitCount);
+            // check to see if player completed their mission
             if (baitCount > 0) {
+                // send message if mission incomplete
                 $('.result').html(`You missed ${baitCount} clicks! Try again?`);
             } else {
+                // send mission if complete
                 $('.result').html(`You got all ${initialBait} clicks! YOU WIN!`);
             }
+            // turn game off, clear interval & set star to restart
             gameOn = false;
             clearInterval(countInterval);
             $('.start').html("Restart");
@@ -130,11 +126,12 @@ function playGame() {
     }
 }
 
-// FUBCTION TO START GAME ON CLICK
+// function to start/restart game on click of start/restart button
 $('.start').on('click', function(){
     if (gamesPlayed = 0 ){
         playGame();
     } else {
+        // if this is not 1st game, we need to reset .game-area html and set gameOn to be true
         gameOn = true;
         $('.game-area').html('<div class="holder"><h2></h2></div>');
         playGame();
