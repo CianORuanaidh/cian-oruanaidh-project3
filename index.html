@@ -8,33 +8,111 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <title>Click The Bait!</title>
+    <title>Click Bait!</title>
 </head>
 
 <body>
     <header>
-        <!-- Header is here -->
+        <nav></nav>
+        <div class="logo">
+            <h1>Click Bait</h1>
+            <h2>If you're gonna go fishin' ya gotta have bait!</h2>
+        </div>
     </header>
     <main>
-        <section class="controls flex wrap">
-            <div class="level">Easy</div>
-            <div class="level">Medium</div>
-            <div class="level">Dificult</div>
-            <div class="start">Start</div>
-        </section>
-        <section class="game-area flex wrap">
-            <div class="holder">
-                <h2>Select your level</h2>
+        <section>
+            <!-- <div class="intro">
+                <h1>Intro</h1>
+                <p></p>
+            </div> -->
+            <div class="rules">
+                <div class="rule rule-1">
+                    <h2>Get bait!</h2>
+                    <p>Click bait (INSERT ICON) to add it to you tackle bag</p>        
+                </div>
+                <div class="rule rule-2">
+                    <h2>Avoid boots!</h2>
+                    <p>If you get a boot (INSERT ICON) you'll loose your line for 2 seconds</p>
+                </div>
             </div>
         </section>
-        <section class="score-holder flex wrap">
-            <!-- <h2>SCORE</h2> -->
+        <section class="controls">
+            <div class="level-controls">
+                <div class="level selected">Easy</div>
+                <div class="level">Medium</div>
+                <div class="level">Dificult</div>
+            </div>
+            <div class="start">Start</div>
+        </section>
+        <section class="game-area clearfix">
+            <div class="holder">
+                <h2>Select your level above!</h2>
+            </div>
+           
+            <!-- <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/caterpillar.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/caterpillar.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/caterpillar.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/caterpillar.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/caterpillar.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
+            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
+            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div> -->
+        </section>
+        <div class="score-holder">
+            <h2>Timer</h2>
+            <h2 class="timer">-</h2>
+            <!-- <h2>Score</h2>
+            <h2>-</h2> -->
+        </div>
+        <!-- <section class="score-holder">
+            <h2>SCORE</h2>
             <h2>Timer</h2>
             <h2 class ="timer"></h2>
             <h2>Clicks left</h2>
             <h2 class="score"></h2>
-            <h2 class="result"></h2>
+            <h2 class="result"></h2> 
+        </section> -->
+        <section class="end-game-score">
+            <h2>How are ya gonna do?!</h2>
+            <div class="this-game">
+                <h2>Your score</h2>
+                <p class="score">-</p>
+                <p class="percent">-</p>
+                <p class="note">-</p>        
+            </div>
+            <div class="total-games">
+                <h2>Games played</h2>
+                <p class="played">-</p>        
+                <!-- <h2>Win %</h2>
+                <p class="won"></p> -->
+            </div>
+
         </section>
+
     </main>
 
     <footer>

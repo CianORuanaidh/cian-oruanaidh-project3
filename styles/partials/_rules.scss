@@ -1,0 +1,26 @@
+.rules {
+    padding: 50px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    // background: $primary-color;
+    // color: $off-white;
+    background: $off-white;
+    color: $off-black;
+
+    h2, p{
+        margin: 0;
+    }
+    
+    .rule {
+        flex-basis: 460px;
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+
+    .rule-1, .rule-2 {
+        // margin: 20px;
+        padding: 15px 0;
+        border: $off-white 2px solid;
+        border-radius: 15px;
+    }
+}

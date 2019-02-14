@@ -1,12 +1,33 @@
-.flex {
-    display: flex;
+// 3rd part assest
+// google fonts
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Gaegu:400,700|Staatliches');
+.this_does_nothing {
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Staatliches', cursive;
+    font-family: 'Gaegu', cursive;
 }
 
-.wrap {
- flex-wrap: wrap;   
+// colors
+$primary-color: #ed6a5a;
+$second-color: #f4f1bb;
+$third-color: #9bc1bc;
+$forth-color: #5ca4a9;
+$off-black: #232323;
+$off-white: #ffffef;
+
+body {
+    font-family: 'Gaegu', cursive;
+}
+
+html {
+    font-size: 125%;
 }
 
 img {
     width: 100%;
+    display: block;
+    // display: none;
 }
+
+
 

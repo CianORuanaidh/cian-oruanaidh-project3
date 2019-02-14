@@ -1,11 +1,43 @@
 .score-holder {
-    justify-content: space-between;
-    background: lightcoral;
+    // display: none;
+    // justify-content: space-between;
+    background: $primary-color;
     color: white;
+    position: fixed;
+    left: 2px;
+    bottom: 2px;
+    border-radius: 10px;
+    padding: 5px;
+    // width: 50px;
+    // height: 50px;
 }
 
 .score-holder h2 {
     text-align: center;
+    font-size: 1rem;
     margin: 0;
-    padding: 20px;
+}
+
+.end-game-score {
+    display: flex;
+    direction: row;
+    flex-wrap: wrap;
+    background: $off-white;
+    padding: 40px 5%;
+
+    .this-game, .total-games {
+        flex-basis: 300px;
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+
+    .total-games {
+        text-align: right;
+    }
+}
+
+.end-game-score > h2 {
+    font-size: 3rem;
+    flex-basis: 100%;
+    text-align: center;
 }

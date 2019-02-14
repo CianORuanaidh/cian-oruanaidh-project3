@@ -1,10 +1,8 @@
 .game-area {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-    background: lightseagreen;
+    background: $forth-color;
     color: white;
-    padding: 10px 30px;
+    padding: 10px 5%;
+    // position: relative;
 }
 
 .paused {
@@ -14,16 +12,34 @@
 .holder {
     padding: 200px 0;
     text-transform: uppercase;
+    h2 {
+        text-align: center;
+    }
+}
+
+.game-area .card:nth-of-type(2n) {
+    // background: palevioletred;
+    // margin: 3px;
+}
+
+.game-area .card:nth-last-of-type(8n + 1) {
+    // background: black;
+    // margin-right: 0;
+}
+
+.game-area .card:nth-of-type(8n + 1) {
+    // background: blue;
+    // margin-left: 0;
 }
 
 .card {
-    height: 50px;
-    flex-basis: 50px;
-    flex-shrink: 0;
-    margin: 10px;
     padding: 10px;
     border: 2px white solid;
     border-radius: 10%;
+    margin: 3px;
+    width: calc((100% / 8) - 6px);
+    float: left;
+    background: $second-color;
 }
 
 .correct {

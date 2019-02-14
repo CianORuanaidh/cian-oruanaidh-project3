@@ -4,15 +4,21 @@ let baitCount = 0;
 let level = 'easy'
 let gameOn = true;
 let gamesPlayed = 0;
+// let gamesLost = 0;
+
+$('.end-game-score .this-game, .end-game-score .total-games ').hide();
+$('.score-holder').hide();
+
 
 // FUNCTION FOR ON CLICK OF BAIT
 // if bait is clicked, increment score by 1
-$('body').on('click', '.bait', function () {
+$('body').on('click', '.not-clicked', function () {
     if (gameOn === true ){
+        console.log('gameOn === true')
         $(this).removeClass('not-clicked')
         $(this).addClass("clicked");    
         baitCount --;
-        $('.score').html(baitCount);
+        // $('.score').html(baitCount);
     }
 });
 
@@ -42,6 +48,8 @@ let gameBoardHTML = '';
 // takes count variable based on game difficulty 
 // & randomly creates cards based on type and icon
 function createGameBoard(count) {
+    gameBoardHTML = '';
+    baitCount = 0;
     for (let i=0; i<count; i++){
         let randoNum = Math.floor(Math.random() * 100);
         if (randoNum < 20) {
@@ -51,9 +59,9 @@ function createGameBoard(count) {
             baitCount ++ ;
             gameBoardHTML += `<div class="card bait not-clicked"><img src="assets/${bait2}" alt="worm"></div>`;
         } else if (randoNum < 70) {
-            gameBoardHTML += `<div class="card boot not-clicked"><img src="assets/${boot1}" alt="worm"></div>`;
+            gameBoardHTML += `<div class="card boot"><img src="assets/${boot1}" alt="worm"></div>`;
         } else {
-            gameBoardHTML += `<div class="card boot not-clicked"><img src="assets/${boot2}" alt="worm"></div>`;
+            gameBoardHTML += `<div class="card boot"><img src="assets/${boot2}" alt="worm"></div>`;
         }
     }
     initialBait = baitCount;
@@ -61,18 +69,21 @@ function createGameBoard(count) {
 
 // FUNCTION TO CHANGE GAME DIFFICULTY SETTING
 $('.level').on('click', function(){
+    $('.level').removeClass("selected");
+    $(this).addClass("selected");
     level = $(this).html().toLowerCase();
 });
 
 // MAIN FUNCTION TO CONTROL GAME LENGTH AND LOGIC
 function playGame() {
+    // console.log("played " + gamesPlayed);
     // create game board based on level of difficulty
     if (level === 'easy'){
         createGameBoard(32);
     } else if (level === 'medium') {
-        createGameBoard(64);
+        createGameBoard(48);
     } else {
-        createGameBoard(96);
+        createGameBoard(66);
     }
 
     // set gameLength and gameClock
@@ -92,7 +103,9 @@ function playGame() {
         } else if (gameClock === (gameLength + 1)){
             // tell player the mission is starting & how many bugs they have to get
             $('.game-area .holder h2').html("START!");
-            $('.score').html(baitCount);
+            $('.score-holder .timer').html("-");
+            $('.score-holder').show();
+            // $('.score').html(baitCount);
             gameClock = gameClock -1;
 
         } else if (gameClock === gameLength) {
@@ -118,17 +131,33 @@ function playGame() {
                 // send mission if complete
                 $('.result').html(`You got all ${initialBait} clicks! YOU WIN!`);
             }
+            // populate scores
+            $('.this-game .score').html((initialBait - baitCount) + "/" + initialBait);
+            $('.this-game .percent').html((((initialBait - baitCount)/initialBait)*100).toFixed(0) + " %");
+            $('.this-game .note').html("Game OVER");
+            gamesPlayed ++;
+
+            $('.end-game-score > h2').hide();
+            $('.end-game-score .this-game, .end-game-score .total-games ').show();
+            // console.log("played " + gamesPlayed);
+            $('.total-games .played').html(gamesPlayed);
+
             // turn game off, clear interval & set star to restart
             gameOn = false;
             clearInterval(countInterval);
             $('.start').html("Restart");
+
+            // Remove pop-out score board
+            $('.score-holder').hide();
         }
     }
 }
 
 // function to start/restart game on click of start/restart button
-$('.start').on('click', function(){
+$('.start').on('click', function(gamesPlayed){
+    // console.log(gamesPlayed);
     if (gamesPlayed = 0 ){
+        // console.log();
         playGame();
     } else {
         // if this is not 1st game, we need to reset .game-area html and set gameOn to be true

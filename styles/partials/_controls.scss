@@ -1,21 +1,43 @@
 .controls {
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 10px;
-    color: white;
-    background: tomato;
-}
+    padding: 40px 5%;
+    // color: white;
+    // background: $off-black;
+    color: $off-black;
+    background: $off-white;
 
-.level, .start {
-    flex-basis: 150px;
-    flex-shrink: 0;
-    padding: 10px;
-    margin: 5px;
-    border: 2px solid white;
-    border-radius: 10px;
-    text-align: center;
-}
+    .level-controls {
+        display: flex;
+        direction: row;
+        flex-wrap: wrap;
+    }
 
-.start {
-    // min-width: 100%;
+    .level {
+        // flex-basis: 300px;
+        // flex-shrink: 0;
+        min-width: 200px;
+        flex-grow: 1;
+    }
+
+
+    .level, .start {
+        padding: 10px;
+        margin: 5px 0;
+        // border: 2px solid white;
+        background: $second-color;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .level:nth-child(2) {
+        margin: 5px;
+    }
+    
+
+    .start {
+        background: $primary-color;
+    }
+
+    .level.selected {
+        background: $forth-color;
+    }
 }
