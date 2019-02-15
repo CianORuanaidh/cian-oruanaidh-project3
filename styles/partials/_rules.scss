@@ -1,5 +1,5 @@
 .rules {
-    padding: 50px 5%;
+    padding: 50px 5% 0 5%;
     display: flex;
     flex-wrap: wrap;
     // background: $primary-color;
@@ -12,15 +12,58 @@
     }
     
     .rule {
-        flex-basis: 460px;
+        flex-basis: 420px;
         flex-grow: 1;
         flex-shrink: 0;
     }
 
     .rule-1, .rule-2 {
         // margin: 20px;
-        padding: 15px 0;
+        // padding: 15px 0;
         border: $off-white 2px solid;
         border-radius: 15px;
     }
+
+    .rule-1 {
+        margin-right: 30px;
+    }
+
+    figcaption {
+        margin: 40px 0 0 0;
+        img {
+            display: inline;
+            width: 20px;
+        }
+    }
+
+    .image-holder {
+        display: flex;
+        // justify-content: space-around;
+    }
+
+    .image-holder img {
+        width: 30%;
+        max-width: 100px;
+        // animation-duration: 0.5s;
+        // animation-iteration-count: infinite;
+    }
+
+    .image-pulse {
+        animation-duration: 0.5s;
+        // animation-delay: 0.8s;
+        animation-iteration-count: infinite;
+        // background: blue;
+    }
+
+    @media only screen and (max-width: 966px)  {
+        .rule-1 {
+            margin: 0 0 40px 0; 
+            // background: blue;
+        }
+
+        .rule {
+            flex-shrink: 1;
+        }
+    }
+
 }

@@ -54,10 +54,10 @@ function createGameBoard(count) {
         let randoNum = Math.floor(Math.random() * 100);
         if (randoNum < 20) {
             baitCount ++ ;
-            gameBoardHTML += `<div class="card bait not-clicked"><img src="assets/${bait1}" alt="worm"></div>`;
+            gameBoardHTML += `<div class="card bait jello not-clicked"><img src="assets/${bait1}" alt="worm"></div>`;
         } else if (randoNum < 40) {
             baitCount ++ ;
-            gameBoardHTML += `<div class="card bait not-clicked"><img src="assets/${bait2}" alt="worm"></div>`;
+            gameBoardHTML += `<div class="card bait jello not-clicked"><img src="assets/${bait2}" alt="worm"></div>`;
         } else if (randoNum < 70) {
             gameBoardHTML += `<div class="card boot"><img src="assets/${boot1}" alt="worm"></div>`;
         } else {
@@ -79,11 +79,11 @@ function playGame() {
     // console.log("played " + gamesPlayed);
     // create game board based on level of difficulty
     if (level === 'easy'){
-        createGameBoard(32);
+        createGameBoard(24);
     } else if (level === 'medium') {
-        createGameBoard(48);
+        createGameBoard(36);
     } else {
-        createGameBoard(66);
+        createGameBoard(48);
     }
 
     // set gameLength and gameClock
@@ -149,6 +149,9 @@ function playGame() {
 
             // Remove pop-out score board
             $('.score-holder').hide();
+
+            // remove animation from non-clicked cards
+            $('.card').removeClass('not-clicked');
         }
     }
 }

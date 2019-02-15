@@ -29,5 +29,16 @@ img {
     // display: none;
 }
 
+.level:hover, .start:hover {
+    cursor: pointer;
+}
+
+.game-area {
+    cursor: url('../assets/net-cursor-2.png'), pointer;
+}
+
+.game-area:active {
+    cursor: url('../assets/net-cursor-1.png'), pointer;
+}
 
 

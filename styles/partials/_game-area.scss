@@ -5,6 +5,12 @@
     // position: relative;
 }
 
+.bait.not-clicked {
+    animation-duration: 0.8s;
+    animation-delay: 0.8s;
+    animation-iteration-count: infinite;
+}
+
 .paused {
     cursor: not-allowed;
 }
@@ -37,19 +43,64 @@
     border: 2px white solid;
     border-radius: 10%;
     margin: 3px;
-    width: calc((100% / 8) - 6px);
+    width: calc((100% / 12) - 6px);
     float: left;
     background: $second-color;
 }
 
+.card:active {
+    border: 6px red solid;
+    transition: border 0.1s ease-in-out;
+}
+
+
 .correct {
-    background: greenyellow;
+    // background: greenyellow;
 }
 
 .wrong {
-    background: red;
+    // background: red;
 }
 
 .clicked {
-    background: red;
+    background: $primary-color;
+}
+
+@media only screen and (max-width: 1000px)  {
+    .card {
+        // padding: 10px;
+        // border: 2px white solid;
+        // border-radius: 10%;
+        // margin: 3px;
+        width: calc((100% / 9) - 6px);
+        // float: left;
+        // background: $second-color;
+    }
+
+}
+
+@media only screen and (max-width: 800px)  {
+    .card {
+        // padding: 10px;
+        // border: 2px white solid;
+        // border-radius: 10%;
+        // margin: 3px;
+        width: calc((100% / 6) - 6px);
+        // float: left;
+        // background: $second-color;
+    }
+
+}
+
+@media only screen and (max-width: 450px)  {
+    .card {
+        // padding: 10px;
+        // border: 2px white solid;
+        // border-radius: 10%;
+        // margin: 3px;
+        width: calc((100% / 3) - 6px);
+        // float: left;
+        // background: $second-color;
+    }
+
 }

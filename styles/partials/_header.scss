@@ -1,11 +1,35 @@
-.logo {
+header{
     background: $second-color;
     color: $off-black;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // align-content: space-around;
+    position: relative;
+
+    .play {
+        // align-self: flex-end;
+        position: absolute;
+        bottom: 20px;
+        margin: 0 auto;
+        left: calc(50% - (42.75px / 2));
+        animation-duration: 1s;
+        // animation-delay: 0.2s;
+        animation-iteration-count: 1;
+    }
+}
+
+.logo {
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-iteration-count: 2;
+    margin: 0 auto;
+
+    h1, h2 {
+        animation-duration: 0.8s;
+        animation-iteration-count: 1;
+    }
+
     h1 {
         font-family: 'Amatic SC', cursive;
         font-weight: bold;
@@ -16,5 +40,26 @@
     h2 {
         font-family: 'Gaegu', cursive;
         margin: 0 auto;
+        text-align: center;
+        // width: 80vw;
     }
+
+    @media only screen and (max-width: 800px)  {
+        h1 {
+            font-size: 25vw;
+            text-align: center;
+            // line-height: 85%;
+        }
+        h2 {
+            font-size: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 600px)  {
+        h1 {
+            font-size: 30vw;
+            // line-height: 85%;
+        }
+    }
+    
 }

@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- import animate css library -->
+    <!-- <link rel="stylesheet" href="animate.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -14,12 +17,15 @@
 <body>
     <header>
         <nav></nav>
-        <div class="logo">
-            <h1>Click Bait</h1>
-            <h2>If you're gonna go fishin' ya gotta have bait!</h2>
+        <div class="logo bounce">
+            <h1 class="animated bounceInLeft">Click Bait</h1>
+            <h2 class="animated bounceInRight">If you're gonna go fishin' ya gotta have bait!</h2>
         </div>
+        <a href="#main-content">
+            <div class="play bounceInUp">Play!</div> 
+        </a>
     </header>
-    <main>
+    <main id="main-content">
         <section>
             <!-- <div class="intro">
                 <h1>Intro</h1>
@@ -27,12 +33,28 @@
             </div> -->
             <div class="rules">
                 <div class="rule rule-1">
-                    <h2>Get bait!</h2>
-                    <p>Click bait (INSERT ICON) to add it to you tackle bag</p>        
+                    <figure>
+                        <div class="image-holder">
+                            <img src="assets/worm.svg" alt="worm icon.">
+                            <img src="assets/caterpillar.svg" alt="boot">
+                        </div>
+                        <figcaption>
+                            <h2>Get bait!</h2>
+                            <p>Use your net to catch (click) the bugs <img class="image-pulse pulse" src="assets/worm.svg" alt="worm icon."><img class="image-pulse pulse" src="assets/caterpillar.svg" alt="boot"> needed for your fishing trip.</p>                    
+                        </figcaption>
+                    </figure>
                 </div>
                 <div class="rule rule-2">
-                    <h2>Avoid boots!</h2>
-                    <p>If you get a boot (INSERT ICON) you'll loose your line for 2 seconds</p>
+                    <figure>
+                        <div class="image-holder">
+                            <img src="assets/boot.svg" alt="boot">
+                            <img src="assets/boot-2.svg" alt="boot">
+                        </div>
+                        <figcaption>
+                            <h2>Avoid boots!</h2>
+                            <p>If you get a boot <img class="image-pulse pulse" src="assets/boot.svg" alt="boot"><img class="image-pulse pulse" src="assets/boot-2.svg" alt="boot"> you'll loose your net for 2 seconds</p>            
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </section>

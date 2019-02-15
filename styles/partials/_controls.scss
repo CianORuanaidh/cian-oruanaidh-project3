@@ -35,9 +35,23 @@
 
     .start {
         background: $primary-color;
+        color: $off-white;
+        // animation-duration: 2s;
+        // animation-delay: 2s;
+        // animation-iteration-count: infinite;
     }
 
     .level.selected {
         background: $forth-color;
+        color: $off-white;
+    }
+
+    @media only screen and (max-width: 700px)  {
+        .level {
+            // flex-basis: 300px;
+            // flex-shrink: 0;
+            min-width: 100%;
+            // flex-grow: 1;
+        }
     }
 }

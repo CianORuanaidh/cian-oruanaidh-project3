@@ -148,7 +148,16 @@ img {
   width: 100%;
   display: block; }
 
-.logo {
+.level:hover, .start:hover {
+  cursor: pointer; }
+
+.game-area {
+  cursor: url("../assets/net-cursor-2.png"), pointer; }
+
+.game-area:active {
+  cursor: url("../assets/net-cursor-1.png"), pointer; }
+
+header {
   background: #f4f1bb;
   color: #232323;
   height: 100vh;
@@ -161,7 +170,31 @@ img {
   flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  position: relative; }
+  header .play {
+    position: absolute;
+    bottom: 20px;
+    margin: 0 auto;
+    left: calc(50% - (42.75px / 2));
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1; }
+
+.logo {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-iteration-count: 2;
+  animation-iteration-count: 2;
+  margin: 0 auto; }
+  .logo h1, .logo h2 {
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1; }
   .logo h1 {
     font-family: 'Amatic SC', cursive;
     font-weight: bold;
@@ -170,10 +203,20 @@ img {
     margin: 0 auto; }
   .logo h2 {
     font-family: 'Gaegu', cursive;
-    margin: 0 auto; }
+    margin: 0 auto;
+    text-align: center; }
+  @media only screen and (max-width: 800px) {
+    .logo h1 {
+      font-size: 25vw;
+      text-align: center; }
+    .logo h2 {
+      font-size: 20px; } }
+  @media only screen and (max-width: 600px) {
+    .logo h1 {
+      font-size: 30vw; } }
 
 .rules {
-  padding: 50px 5%;
+  padding: 50px 5% 0 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,22 +227,54 @@ img {
   .rules h2, .rules p {
     margin: 0; }
   .rules .rule {
-    -ms-flex-preferred-size: 460px;
-    flex-basis: 460px;
+    -ms-flex-preferred-size: 420px;
+    flex-basis: 420px;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
     -ms-flex-negative: 0;
     flex-shrink: 0; }
   .rules .rule-1, .rules .rule-2 {
-    padding: 15px 0;
     border: #ffffef 2px solid;
     border-radius: 15px; }
+  .rules .rule-1 {
+    margin-right: 30px; }
+  .rules figcaption {
+    margin: 40px 0 0 0; }
+    .rules figcaption img {
+      display: inline;
+      width: 20px; }
+  .rules .image-holder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .rules .image-holder img {
+    width: 30%;
+    max-width: 100px; }
+  .rules .image-pulse {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite; }
+  @media only screen and (max-width: 966px) {
+    .rules .rule-1 {
+      margin: 0 0 40px 0; }
+    .rules .rule {
+      -ms-flex-negative: 1;
+      flex-shrink: 1; } }
 
 .game-area {
   background: #5ca4a9;
   color: white;
   padding: 10px 5%; }
+
+.bait.not-clicked {
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
 
 .paused {
   cursor: not-allowed; }
@@ -215,18 +290,30 @@ img {
   border: 2px white solid;
   border-radius: 10%;
   margin: 3px;
-  width: calc((100% / 8) - 6px);
+  width: calc((100% / 12) - 6px);
   float: left;
   background: #f4f1bb; }
 
-.correct {
-  background: greenyellow; }
-
-.wrong {
-  background: red; }
+.card:active {
+  border: 6px red solid;
+  -webkit-transition: border 0.1s ease-in-out;
+  -o-transition: border 0.1s ease-in-out;
+  transition: border 0.1s ease-in-out; }
 
 .clicked {
-  background: red; }
+  background: #ed6a5a; }
+
+@media only screen and (max-width: 1000px) {
+  .card {
+    width: calc((100% / 9) - 6px); } }
+
+@media only screen and (max-width: 800px) {
+  .card {
+    width: calc((100% / 6) - 6px); } }
+
+@media only screen and (max-width: 450px) {
+  .card {
+    width: calc((100% / 3) - 6px); } }
 
 .controls {
   padding: 40px 5%;
@@ -253,9 +340,14 @@ img {
   .controls .level:nth-child(2) {
     margin: 5px; }
   .controls .start {
-    background: #ed6a5a; }
+    background: #ed6a5a;
+    color: #ffffef; }
   .controls .level.selected {
-    background: #5ca4a9; }
+    background: #5ca4a9;
+    color: #ffffef; }
+  @media only screen and (max-width: 700px) {
+    .controls .level {
+      min-width: 100%; } }
 
 .score-holder {
   background: #ed6a5a;
@@ -292,7 +384,7 @@ img {
     text-align: right; }
 
 .end-game-score > h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   text-align: center; }
