@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Gaegu:400,700|Staatliches");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:700|Gaegu:400");
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block; }
 
@@ -133,10 +133,12 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-.this_does_nothing {
-  font-family: 'Amatic SC', cursive;
-  font-family: 'Staatliches', cursive;
-  font-family: 'Gaegu', cursive; }
+html {
+  scroll-behavior: smooth; }
+
+@media only screen and (max-width: 934px) {
+  html {
+    scroll-behavior: auto; } }
 
 body {
   font-family: 'Gaegu', cursive; }
@@ -146,16 +148,29 @@ html {
 
 img {
   width: 100%;
-  display: block; }
+  display: block;
+  max-width: 100%;
+  max-height: 100%; }
 
 .level:hover, .start:hover {
   cursor: pointer; }
 
-.game-area {
-  cursor: url("../assets/net-cursor-2.png"), pointer; }
+a {
+  color: inherit;
+  text-decoration: none; }
 
-.game-area:active {
-  cursor: url("../assets/net-cursor-1.png"), pointer; }
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden; }
 
 header {
   background: #f4f1bb;
@@ -239,19 +254,33 @@ header {
     border-radius: 15px; }
   .rules .rule-1 {
     margin-right: 30px; }
+  .rules .rule-3 {
+    text-align: center;
+    padding-top: 40px; }
+    .rules .rule-3 h2 {
+      font-size: 3rem; }
+    .rules .rule-3 img {
+      width: 40px;
+      display: inline;
+      margin-bottom: -5px; }
   .rules figcaption {
     margin: 40px 0 0 0; }
     .rules figcaption img {
       display: inline;
-      width: 20px; }
+      width: 20px;
+      height: 20px; }
   .rules .image-holder {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
   .rules .image-holder img {
     width: 30%;
-    max-width: 100px; }
-  .rules .image-pulse {
+    max-width: 100px;
+    max-height: 100px; }
+  .rules .image-pulse, .rules .rule-3 img {
     -webkit-animation-duration: 0.5s;
     animation-duration: 0.5s;
     -webkit-animation-iteration-count: infinite;
@@ -261,12 +290,58 @@ header {
       margin: 0 0 40px 0; }
     .rules .rule {
       -ms-flex-negative: 1;
-      flex-shrink: 1; } }
+      flex-shrink: 1; }
+    .rules .rule-3 h2 {
+      font-size: 2rem; } }
+  @media only screen and (min-width: 934px) {
+    .rules .rule-2 figure {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse; }
+      .rules .rule-2 figure figcaption {
+        margin: 0 0 40px 0; } }
+  @media only screen and (max-width: 934px) {
+    .rules figcaption {
+      text-align: center; } }
 
 .game-area {
   background: #5ca4a9;
   color: white;
-  padding: 10px 5%; }
+  padding: 10px 5%;
+  position: relative; }
+
+.end-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 5%;
+  bottom: 5%;
+  text-align: center;
+  background: rgba(237, 106, 90, 0.95);
+  border-radius: 30px;
+  -webkit-box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.75); }
+
+.game-area {
+  cursor: url("../assets/net-cursor-2.png"), pointer; }
+
+.game-area:active {
+  cursor: url("../assets/net-cursor-1.png"), pointer; }
 
 .bait.not-clicked {
   -webkit-animation-duration: 0.8s;
@@ -277,7 +352,7 @@ header {
   animation-iteration-count: infinite; }
 
 .paused {
-  cursor: not-allowed; }
+  cursor: url("../assets/prohibited-cur.png"), pointer; }
 
 .holder {
   padding: 200px 0;
@@ -292,7 +367,10 @@ header {
   margin: 3px;
   width: calc((100% / 12) - 6px);
   float: left;
-  background: #f4f1bb; }
+  background: #f4f1bb;
+  -webkit-box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.75); }
 
 .card:active {
   border: 6px red solid;
@@ -353,14 +431,17 @@ header {
   background: #ed6a5a;
   color: white;
   position: fixed;
-  left: 2px;
-  bottom: 2px;
+  left: 10px;
+  bottom: 10px;
   border-radius: 10px;
-  padding: 5px; }
+  padding: 5px;
+  -webkit-box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.75); }
 
 .score-holder h2 {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: 0; }
 
 .end-game-score {
@@ -382,9 +463,28 @@ header {
     flex-shrink: 0; }
   .end-game-score .total-games {
     text-align: right; }
+  @media only screen and (max-width: 670px) {
+    .end-game-score .this-game, .end-game-score .total-games {
+      width: 100%;
+      text-align: center; } }
 
 .end-game-score > h2 {
   font-size: 2rem;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   text-align: center; }
+
+footer {
+  background: #ed6a5a;
+  color: #ffffef;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 10px 0; }

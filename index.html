@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- import animate css library -->
-    <!-- <link rel="stylesheet" href="animate.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
@@ -15,6 +13,7 @@
 </head>
 
 <body>
+    <!-- Header section/landing page -->
     <header>
         <nav></nav>
         <div class="logo bounce">
@@ -25,13 +24,12 @@
             <div class="play bounceInUp">Play!</div> 
         </a>
     </header>
+    <!-- Main content area, includes rules, controls, game-are and score board -->
     <main id="main-content">
+        <!-- rules section -->
         <section>
-            <!-- <div class="intro">
-                <h1>Intro</h1>
-                <p></p>
-            </div> -->
             <div class="rules">
+                <h2 class="visually-hidden">Choose your difficulty!</h2>
                 <div class="rule rule-1">
                     <figure>
                         <div class="image-holder">
@@ -40,7 +38,7 @@
                         </div>
                         <figcaption>
                             <h2>Get bait!</h2>
-                            <p>Use your net to catch (click) the bugs <img class="image-pulse pulse" src="assets/worm.svg" alt="worm icon."><img class="image-pulse pulse" src="assets/caterpillar.svg" alt="boot"> needed for your fishing trip.</p>                    
+                            <p>Use your net to catch (click) the bugs <img class="image-pulse pulse" src="assets/worm.svg" alt="Worm icon used in click bait game."><img class="image-pulse pulse" src="assets/caterpillar.svg" alt="Caterpillar icon used in click bait game."> needed for your fishing trip.</p>                    
                         </figcaption>
                     </figure>
                 </div>
@@ -52,72 +50,37 @@
                         </div>
                         <figcaption>
                             <h2>Avoid boots!</h2>
-                            <p>If you get a boot <img class="image-pulse pulse" src="assets/boot.svg" alt="boot"><img class="image-pulse pulse" src="assets/boot-2.svg" alt="boot"> you'll loose your net for 2 seconds</p>            
+                            <p>If you get a boot <img class="image-pulse pulse" src="assets/boot.svg" alt="Boot icon used in click bait game."><img class="image-pulse pulse" src="assets/boot-2.svg" alt="Second boot icon used in click bait game."> you'll lose your net for 2 seconds.</p>            
                         </figcaption>
                     </figure>
                 </div>
+                <div class="rule rule-3">
+                    <h2>Beat the clock! <img class="pulse" src="assets/clock.png" alt="clock icon by Eagle Eye from the Noun Project"></h2>
+                    <p>You've gotta do it all in 10 seconds.</p> 
+                </div>
             </div>
         </section>
+        <!-- controls section -->
         <section class="controls">
             <div class="level-controls">
                 <div class="level selected">Easy</div>
                 <div class="level">Medium</div>
-                <div class="level">Dificult</div>
+                <div class="level">Difficult</div>
             </div>
-            <div class="start">Start</div>
+            <a href="#game-area"><div class="start">Start</div></a>
         </section>
-        <section class="game-area clearfix">
+        <!-- game area, has holder content, game html will generate dynamically -->
+        <section id="game-area" class="game-area clearfix">
+            <!-- <h2 class="end-message">Game over. Try again?</h2> -->
             <div class="holder">
                 <h2>Select your level above!</h2>
-            </div>
-           
-            <!-- <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/caterpillar.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/caterpillar.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/caterpillar.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/caterpillar.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/caterpillar.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot-2.svg" alt="worm"></div>
-            <div class="card boot not-clicked"><img src="assets/boot.svg" alt="worm"></div>
-            <div class="card bait not-clicked"><img src="assets/worm.svg" alt="worm"></div> -->
+            </div>                      
         </section>
+        <!-- scoreborad div -->
         <div class="score-holder">
             <h2>Timer</h2>
             <h2 class="timer">-</h2>
-            <!-- <h2>Score</h2>
-            <h2>-</h2> -->
         </div>
-        <!-- <section class="score-holder">
-            <h2>SCORE</h2>
-            <h2>Timer</h2>
-            <h2 class ="timer"></h2>
-            <h2>Clicks left</h2>
-            <h2 class="score"></h2>
-            <h2 class="result"></h2> 
-        </section> -->
         <section class="end-game-score">
             <h2>How are ya gonna do?!</h2>
             <div class="this-game">
@@ -129,8 +92,6 @@
             <div class="total-games">
                 <h2>Games played</h2>
                 <p class="played">-</p>        
-                <!-- <h2>Win %</h2>
-                <p class="won"></p> -->
             </div>
 
         </section>
@@ -138,6 +99,7 @@
     </main>
 
     <footer>
+            Copyright &copy; 2019 Cian O'Ruanaidh
         <!-- footer is here -->
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>

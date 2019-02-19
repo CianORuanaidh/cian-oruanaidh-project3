@@ -1,20 +1,19 @@
 .score-holder {
-    // display: none;
-    // justify-content: space-between;
     background: $primary-color;
     color: white;
     position: fixed;
-    left: 2px;
-    bottom: 2px;
+    left: 10px;
+    bottom: 10px;
     border-radius: 10px;
     padding: 5px;
-    // width: 50px;
-    // height: 50px;
+    -webkit-box-shadow: 5px 5px 10px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 10px -5px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 10px -5px rgba(0,0,0,0.75);
 }
 
 .score-holder h2 {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 0;
 }
 
@@ -30,10 +29,18 @@
         flex-grow: 1;
         flex-shrink: 0;
     }
-
+    
     .total-games {
         text-align: right;
     }
+
+    @media only screen and (max-width: 670px) {
+        .this-game, .total-games {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
 }
 
 .end-game-score > h2 {
@@ -41,3 +48,4 @@
     flex-basis: 100%;
     text-align: center;
 }
+

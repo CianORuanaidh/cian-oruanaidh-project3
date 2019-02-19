@@ -1,0 +1,9 @@
+footer {
+    background: $primary-color;
+    color: $off-white;
+    // text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 0;
+}
